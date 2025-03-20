@@ -74,29 +74,6 @@ async def check_cached(image: bytes):
 
     return json.loads(data) if data else None
 
-''' @app.post("/classify")
-async def classify_imagenet(image: Annotated[bytes, File()]):
-    logger.info("Received classification request")
-    infer_cache = await check_cached(image)
-
-    if infer_cache == None:
-        logger.info("Making request to model server")
-        async with httpx.AsyncClient() as client:
-            try:
-                url = f"{MODEL_SERVER_URL}/classify"
-                files = {"image": image}
-
-                logger.debug(f"Sending request to model server: {url}")
-                response = await client.post(url, files=files)
-                response.raise_for_status()
-
-                logger.info("Successfully received model prediction")
-                return response.json()
-            except Exception as e:
-                logger.error(f"Model server request failed: {str(e)}")
-                raise HTTPException(status_code=500, detail="Error from Model Endpoint")
-
-    return infer_cache '''
 @app.post("/classify")
 async def classify_imagenet(image: Annotated[bytes, File()]):
     """
