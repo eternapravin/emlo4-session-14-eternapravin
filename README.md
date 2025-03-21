@@ -111,9 +111,24 @@ Session14 - Kubernetes - II: Ingress, ConfigMap, Secrets, Volumes and HELM
 
     - Once deployed using Helm chart, the successful deployment will get a simmilar following prompt message in the console
       ![image](https://github.com/user-attachments/assets/8897d041-6b90-4bb4-917b-39e50d8d0627)
+    -  Testing can be done by following the above Testing instructions as is, just that for different namespaces, different port numbers have been used, for example, default: 30000, dev: 30001, prod:30002 values-dev.yaml and values-prod.yaml files, open the web browser and use the following url for each namespaces as below and test them for Health and Classification inference:
+    -  Default: http://43.205.96.203:30000/docs#/default/classify_imagenet_classify_post
+    -  Dev: http://43.205.96.203:30001/docs#/default/classify_imagenet_classify_post
+    -  Prod: http://43.205.96.203:30002/docs#/default/classify_imagenet_classify_post
+   Results :
+         ![health](https://github.com/user-attachments/assets/9f8184c3-8cd2-432e-9d8e-b832bf210bd7)
+       ![Classify](https://github.com/user-attachments/assets/6ba3308a-8179-4989-9a5d-a207a2ece630)
 
-   
-    - 
-    - 
+     - The results for
+          kubectl describe <your_deployment>
+          kubectl describe <your_pod>
+          kubectl describe <your_ingress>
+          kubectl top pod
+          kubectl top node
+          kubectl get all -A -o yaml
+       are provided in the fastapi-helm/results folder
+
+
+    
 
         
