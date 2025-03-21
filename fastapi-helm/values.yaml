@@ -34,3 +34,6 @@ redis:
     memory: "200Mi"
     cpu: "200m"
   password: "default-password"
+
+
+  
