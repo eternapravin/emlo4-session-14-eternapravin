@@ -3,3 +3,4 @@ environment: dev
 hostname: fastapi.dev.localhost
 redis:
   password: "dev-redis-password" 
+  nodeport: 30000

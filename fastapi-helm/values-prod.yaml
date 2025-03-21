@@ -3,3 +3,4 @@ environment: prod
 hostname: fastapi.prod.example.com
 redis:
   password: "prod-redis-password" 
+nodeport: 30001

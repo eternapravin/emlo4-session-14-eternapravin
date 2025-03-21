@@ -14,6 +14,7 @@ webServer:
   image:
     repository: web-server
     tag: latest
+    nodeport: 30002
 
 # Model Server
 modelServer:
