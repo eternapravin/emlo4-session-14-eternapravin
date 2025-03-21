@@ -46,10 +46,10 @@ Session14 - Kubernetes - II: Ingress, ConfigMap, Secrets, Volumes and HELM
   - Created 2 applications - model-server and web-server, model-server contains the necessary code to do the inferencing of cat-dog classifier and web interfacce to access the model-server was abstracted to web-server
   - Build Instructions:
     -  To configure shell to use the Docker daemon inside Minikube instead of the default Docker daemon on the local machine, the below command was used:
-      'eval $(minikube docker-env)'
+       `eval $(minikube docker-env`
     - Build the model-server using this below command:
-       'docker build --platform linux/amd64 -t model-server model-server'
+        `docker build --platform linux/amd64 -t model-server model-server`
     - Build the web-server using the below command:
-       'docker build --platform linux/amd64 -t web-server web-server'
+        `docker build --platform linux/amd64 -t web-server web-server`
     - To come of the Docker daemon shell inside the minikube, use the following command:
-         'eval $(minikube docker-env -u)'
+         `eval $(minikube docker-env -u)`
