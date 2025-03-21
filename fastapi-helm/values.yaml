@@ -14,7 +14,7 @@ webServer:
   image:
     repository: web-server
     tag: latest
-    nodeport: 30002
+    nodeport: 30000
 
 # Model Server
 modelServer:
@@ -36,4 +36,3 @@ redis:
   password: "default-password"
 
 
-  
