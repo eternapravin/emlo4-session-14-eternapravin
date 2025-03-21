@@ -119,14 +119,14 @@ Session14 - Kubernetes - II: Ingress, ConfigMap, Secrets, Volumes and HELM
          ![health](https://github.com/user-attachments/assets/9f8184c3-8cd2-432e-9d8e-b832bf210bd7)
        ![Classify](https://github.com/user-attachments/assets/6ba3308a-8179-4989-9a5d-a207a2ece630)
 
-     - The results for
+     - The results for the following are provided in the fastapi-helm/results folder as md files
           - kubectl describe <your_deployment>
           - kubectl describe <your_pod>
           - kubectl describe <your_ingress>
           - kubectl top pod
           - kubectl top node
           - kubectl get all -A -o yaml
-       are provided in the fastapi-helm/results folder as md files
+       
 
 
     
