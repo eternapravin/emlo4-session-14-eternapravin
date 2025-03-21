@@ -43,7 +43,10 @@ Session14 - Kubernetes - II: Ingress, ConfigMap, Secrets, Volumes and HELM
   - EC2 side configuration to be done
     - Go to the Ec2 instance, click on the security tab of the insance and select the "security group" and clock on "edit inbound rules" and add the rules as per given below:
      ![image](https://github.com/user-attachments/assets/97d537e9-e939-44e2-839e-36a78acc0c8e)
-  - Created 2 applications - model-server and web-server, model-server contains the necessary code to do the inferencing of cat-dog classifier and web interfacce to access the model-server was abstracted to web-server
+  - Created 2 applications - model-server and web-server, model-server contains the necessary code to do the inferencing of cat-dog classifier and web interfacce to access the model-server was 
+    abstracted to web-server
+  - Web-server should be configured with NodePort with applicable port number equal or above 30000 to enable external hosting and enable using public IP address of the Ec2 instance for hosting, redis 
+    and model-server can continue with the type 'clusterIP' as those applications will not have any external interface unline web-server.
   - Build Instructions:
     -  To configure shell to use the Docker daemon inside Minikube instead of the default Docker daemon on the local machine, the below command was used:
        `eval $(minikube docker-env`
@@ -57,4 +60,8 @@ Session14 - Kubernetes - II: Ingress, ConfigMap, Secrets, Volumes and HELM
 
   - Initially the Code was tested by deploying the application using yaml configuration files using the command below:
           `kubectl apply -f .`
+  - All the pods, meant for web-server, model-server and redis should be in 'running' status, before testing the application
+  - Now, run the web-server service using the command: `minikube service web-server-service`
+  - Enable tunneling using `minikube tunnel`
+  - Apply port forwarding using the command: `kubectl port-forward service/web-server-service 30000:80 --address=0.0.0.0 -n default`
     
