@@ -83,8 +83,10 @@ Session14 - Kubernetes - II: Ingress, ConfigMap, Secrets, Volumes and HELM
        `kubectl create namespace prod`
     - As the default namespace is pre-existed and was managed by Kubernetes and not helm, we may need to add required annotations and labels as below:
       
-       `  kubectl label namespace default app.kubernetes.io/managed-by=Helm --overwrite  `
-       `  kubectl annotate namespace default meta.helm.sh/release-name=fastapi-release-default --overwrite `
-       ` kubectl annotate namespace default meta.helm.sh/release-namespace=default --overwrite `
+       ` kubectl label namespace default app.kubernetes.io/managed-by=Helm --overwrite`
+      
+       ` kubectl annotate namespace default meta.helm.sh/release-name=fastapi-release-default --overwrite`
+      
+       ` kubectl annotate namespace default meta.helm.sh/release-namespace=default --overwrite`
 
         
