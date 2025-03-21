@@ -88,5 +88,32 @@ Session14 - Kubernetes - II: Ingress, ConfigMap, Secrets, Volumes and HELM
        ` kubectl annotate namespace default meta.helm.sh/release-name=fastapi-release-default --overwrite`
       
        ` kubectl annotate namespace default meta.helm.sh/release-namespace=default --overwrite`
+      
+     - The Helm chart is installed by the following command for default namespace as:
+     - helm install fastapi-release-default fastapi-helm --values fastapi-helm/values.yaml --namespace default
+      - The Helm chart for namespaces dev and prod be installed by the following commands below:
+      - DEV: 
+       ` kubectl label namespace dev app.kubernetes.io/managed-by=Helm --overwrite`
+      
+       ` kubectl annotate namespace dev meta.helm.sh/release-name=fastapi-release-dev --overwrite`
+      
+       ` kubectl annotate namespace dev meta.helm.sh/release-namespace=dev --overwrite`
+    
+       ` helm install fastapi-release-dev fastapi-helm --values fastapi-helm/values.yaml -f fastapi-helm/values-dev.yaml --namespace dev `
+      - PROD:
+       ` kubectl label namespace prod app.kubernetes.io/managed-by=Helm --overwrite`
+      
+       ` kubectl annotate namespace prod meta.helm.sh/release-name=fastapi-release-prod --overwrite`
+      
+       ` kubectl annotate namespace prod meta.helm.sh/release-namespace=prod --overwrite`
+
+       ` helm install fastapi-release-prod fastapi-helm --values fastapi-helm/values.yaml -f fastapi-helm/values-prod.yaml --namespace prod `
+
+    - Once deployed using Helm chart, the successful deployment will get a simmilar following prompt message in the console
+      ![image](https://github.com/user-attachments/assets/8897d041-6b90-4bb4-917b-39e50d8d0627)
+
+   
+    - 
+    - 
 
         
