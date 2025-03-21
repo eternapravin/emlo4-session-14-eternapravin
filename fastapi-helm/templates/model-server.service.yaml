@@ -1,13 +1,16 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: model-server-service
-  namespace: default  # Replace with your actual namespace
+    name: model-server-service
+    namespace: {{ .Values.namespace }}
+    labels:
+        app.kubernetes.io/name: model-server
+        app.kubernetes.io/part-of: fastapi-app
 spec:
-  selector:
-    app: model-server  # Ensure this matches the labels in your model server deployment
-  ports:
-    - protocol: TCP
-      port: 8000
-      targetPort: 8000
-  type: ClusterIP  # Change to LoadBalancer if external access is needed
+    selector:
+        app.kubernetes.io/name: model-server
+    ports:
+        - name: http
+          port: 8000
+          targetPort: 8000
+    type: ClusterIP  # Change to LoadBalancer if external access is needed
