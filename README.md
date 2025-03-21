@@ -53,3 +53,8 @@ Session14 - Kubernetes - II: Ingress, ConfigMap, Secrets, Volumes and HELM
         `docker build --platform linux/amd64 -t web-server web-server`
     - To come of the Docker daemon shell inside the minikube, use the following command:
          `eval $(minikube docker-env -u)`
+    - The yaml configuration files were created for configmap, deployment, service for moel-server, web-server and redis and redis.volume was created for persistent volume and persisten volume claim
+
+  - Initially the Code was tested by deploying the application using yaml configuration files using the command below:
+          `kubectl apply -f .`
+    
